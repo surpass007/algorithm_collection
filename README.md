@@ -1,2 +1,2 @@
 # algorithm_collection
-常用算法合集
+常用算法合集(c++)
