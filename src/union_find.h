@@ -11,7 +11,7 @@ class UnionFind {
  public:
   vector<int> fa;
   vector<int> rank;
-  void init(int n) {
+  void Init(int n) {
     fa.resize(n + 1);
     rank.resize(n + 1);
     for (int i = 1; i <= n; i++) {
@@ -21,12 +21,12 @@ class UnionFind {
   }
 
 //path compression
-  int find(int x) { return x == fa[x] ? x : (fa[x] = find(fa[x])); }
+  int Find(int x) { return x == fa[x] ? x : (fa[x] = Find(fa[x])); }
 
 // rank merge
-  void merge(int i, int j) {
-    int x = find(i);
-    int y = find(j);
+  void Merge(int i, int j) {
+    int x = Find(i);
+    int y = Find(j);
     if (rank[x] <= rank[y]) {
       fa[x] = y;
     } else {
